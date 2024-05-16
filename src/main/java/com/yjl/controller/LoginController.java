@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
 
     @GetMapping(value = "/username")
-    @LoginLog(desc = "验证登录")
+    @LoginLog(value = "验证登录")
     public String username(String username, Integer age) {
         return username+"----------"+age;
     }

@@ -15,5 +15,5 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LoginLog {
-    String desc() default "验证是否登录";
+    String value() default "";
 }

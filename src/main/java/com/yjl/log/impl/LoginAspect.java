@@ -30,7 +30,7 @@ public class LoginAspect {
     @Around("@annotation(loginLog)")
     public Object loginAround(ProceedingJoinPoint proceedingJoinPoint, LoginLog loginLog) {
 
-        System.out.println("注解中的值 : " + loginLog.desc());
+        System.out.println("注解中的值 : " + loginLog.value());
         try {
             // 检验是否登录 true 已经登录  false 未登录
             Boolean flag = false;
