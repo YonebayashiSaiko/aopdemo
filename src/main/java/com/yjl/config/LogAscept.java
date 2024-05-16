@@ -28,10 +28,10 @@ import java.util.Arrays;
 @Component
 @RequiredArgsConstructor
 public class LogAscept {
+    private final ISysLogService sysLogService;
     private static final Logger log = LoggerFactory.getLogger(LogAscept.class);
 //    private final static Logger logger = org.slf4j.LoggerFactory.getLogger(LogAsPect.class);
 
-    private final ISysLogService sysLogService;
 
     //切入点 指定了自定义注解
     @Pointcut("@annotation(com.yjl.log.annotation.LoginLog)")
@@ -78,6 +78,6 @@ public class LogAscept {
         LocalDateTime time = LocalDateTime.now();
         sysLog.setCreate_time(time);
         log.info("当前登陆人：{},类名:{},方法名:{},参数：{},执行时间：{}", userid, className, methodName, args, time);
-        sysLogService.insterLog(sysLog);
+        sysLogService.insertLog(sysLog);
     }
 }
